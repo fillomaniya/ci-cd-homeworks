@@ -24,4 +24,54 @@
 ---
 почему после создания pages в папке репы эта самая директория public не отображается? где она тогда вообще лежит? ведь страница создалась беспроблемно  
 ---
+собственно вот код из эдитора:  
+```
+image: busybox:latest
+
+stages:
+  - build
+  - test
+  - deploy
+
+build1:
+  stage: build
+  script:
+    - echo "Do your build here"
+    - echo one >> file1.txt
+  artifacts:
+    paths:
+      - file1.txt
+
+test1:
+  stage: test
+  script:
+    - echo "Do a test here"
+    - echo "For example run a test suite"
+
+test2:
+  stage: test
+  script:
+    - echo "Do another parallel test here"
+    - echo "For example run a lint test"
+
+deploy1:
+  stage: deploy
+  script:
+    - echo "Do your deploy here"
+  environment: production
+
+pages:
+  stage: deploy
+  script:
+  - mkdir -p public
+  - cp file1.txt public/index.html
+  - echo public/file_to_exclude.md
+  artifacts:
+    paths:
+    - public
+    exclude:
+    - public/file_to_exclude.md
+  only:
+  - main
+``` 
 еще дополнение: этот комп у меня на время, если вдруг не получится завершить остальные домашки на нем, буду делать с виртуальной машины на другом компе
