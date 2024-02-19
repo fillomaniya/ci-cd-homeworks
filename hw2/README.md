@@ -31,4 +31,4 @@ testdocker:
 ![list of containers](images/2.png "list of containers")
 
 Pipeline passed
-![pipeline passed](images/3.png "pipeline passed")
+![pipeline passed](images/3-2.png "pipeline passed")
