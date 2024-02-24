@@ -17,11 +17,11 @@ include:
 Файл с аналогичным содержанием есть в этом репозитории: `remote_included-file.yml`
 
 Repository Seminar04 
-![repository](images/1.png "repository")
+![repository](Images/1.png "repository")
 
 Remote included file job
-![remote included file job](images/2.png "remote included file job")
+![remote included file job](Images/2.png "remote included file job")
 
 Pipeline passed
-![pipeline passed](images/3.png "pipeline passed")
+![pipeline passed](Images/3.png "pipeline passed")
 
